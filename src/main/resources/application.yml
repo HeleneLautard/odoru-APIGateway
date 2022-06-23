@@ -8,7 +8,26 @@ spring:
           enabled: true
           lowerCaseServiceId: true
       routes:
-        #TO DO
+        #Service 1
+        - id: gestionBadge
+          uri: lb://GESTIONBADGE/
+          predicates:
+            - Path=/badge/**
+        #Service 2
+        - id: gestionMembre
+          uri: lb://GESTIONMEMBRE/
+          predicates:
+            - Path=/membres/**
+        #Service 3
+        - id: gestionCours
+          uri: lb://GESTIONCOURS/
+          predicates:
+            - Path=/cours/**
+        #Service 4
+        - id: GestionAdministrative
+          uri: lb://GESTIONADMINISTRATIVE/
+          predicates:
+            - Path=/admin/**
 eureka:
   client:
     serviceUrl:
